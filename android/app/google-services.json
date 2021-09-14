@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "999380152523",
+    "project_id": "quickitchen-dotma",
+    "storage_bucket": "quickitchen-dotma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999380152523:android:4d28b909dfb315530b2b4e",
+        "android_client_info": {
+          "package_name": "com.quickitchen.delivery_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999380152523-t0ev4irdf2fhnldu3i9a50505e437jhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzTkYi-z3yb3ahzxgvrO7i5Z_bkqSshq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999380152523-t0ev4irdf2fhnldu3i9a50505e437jhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

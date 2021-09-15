@@ -3,7 +3,7 @@ import 'package:flutter_restaurant/utill/images.dart';
 
 class AppConstants {
 
-  static const String APP_NAME = 'eFood';
+  static const String APP_NAME = 'Quickitchen.ma';
 
   static const String BASE_URL = 'https://backoffice.quickitchen.ma';
   static const String CATEGORY_URI = '/api/v1/categories';

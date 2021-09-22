@@ -1,6 +1,6 @@
 class Strings {
-  static const String choose_the_language = 'Choose the language';
-  static const String find_language = 'Find Language';
+  static const String choose_the_language = 'Choisissez la language';
+  static const String find_language = 'Trouver la langue';
   static const String english = 'English';
   static const String germany = 'Germany';
   static const String korean = 'Korean';

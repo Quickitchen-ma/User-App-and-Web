@@ -127,7 +127,7 @@ class CartScreen extends StatelessWidget {
                                         coupon.applyCoupon(_couponController.text, _total).then((discount) {
                                           if (discount > 0) {
                                             ScaffoldMessenger.of(context).showSnackBar(
-                                                SnackBar(content: Text('You got ${PriceConverter.convertPrice(context, discount)} discount'), backgroundColor: Colors.green));
+                                                SnackBar(content: Text('Vous avez ${PriceConverter.convertPrice(context, discount)} de remise'), backgroundColor: Colors.green));
                                           } else {
                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                               content: Text(getTranslated('invalid_code_or', context)),
@@ -268,8 +268,8 @@ class CartScreen extends StatelessWidget {
                 child: CustomButton(btnTxt: getTranslated('place_order', context), onTap: () {
                   if(_orderAmount < Provider.of<SplashProvider>(context, listen: false).configModel.minimumOrderValue) {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(
-                      'Minimum order amount is ${PriceConverter.convertPrice(context, Provider.of<SplashProvider>(context, listen: false).configModel
-                          .minimumOrderValue)}, you have ${PriceConverter.convertPrice(context, _orderAmount)} in your cart, please add more item.',
+                      'Le montant minimum de la commande est ${PriceConverter.convertPrice(context, Provider.of<SplashProvider>(context, listen: false).configModel
+                          .minimumOrderValue)}, vous avez ${PriceConverter.convertPrice(context, _orderAmount)} dans le panier, veuillez rajouter un article.',
                     ), backgroundColor: Colors.red));
                   } else {
                    Navigator.pushNamed(context, Routes.getCheckoutRoute(

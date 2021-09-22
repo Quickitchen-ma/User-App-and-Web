@@ -98,7 +98,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Text(
                   '${getTranslated('restaurant_is_close_now', context)} '
                       '${DateConverter.convertTimeToTime('${Provider.of<SplashProvider>(context, listen: false).configModel.restaurantOpenTime}:00')}',
-                  style: rubikRegular.copyWith(fontSize: 12, color: Colors.black),
+                  style: rubikRegular.copyWith(fontSize: 12, color: Colors.amber),
                 ),
               ]),
             ),

@@ -105,9 +105,9 @@ class _DeliveryManReviewWidgetState extends State<DeliveryManReviewWidget> {
                               btnTxt: getTranslated('submit', context),
                               onTap: () {
                                 if (productProvider.deliveryManRating == 0) {
-                                  showCustomSnackBar('Give a rating', context);
+                                  showCustomSnackBar('Evaluez notre service', context);
                                 } else if (_controller.text.isEmpty) {
-                                  showCustomSnackBar('Write a review', context);
+                                  showCustomSnackBar('Votre avis nous intéresse', context);
                                 } else {
                                   FocusScopeNode currentFocus = FocusScope.of(context);
                                   if (!currentFocus.hasPrimaryFocus) {

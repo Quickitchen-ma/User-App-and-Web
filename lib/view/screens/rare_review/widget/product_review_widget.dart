@@ -140,9 +140,9 @@ class ProductReviewWidget extends StatelessWidget {
                                   onTap: () {
                                     if(!productProvider.submitList[index]) {
                                       if (productProvider.ratingList[index] == 0) {
-                                        showCustomSnackBar('Give a rating', context);
+                                        showCustomSnackBar('Evaluez notre service', context);
                                       } else if (productProvider.reviewList[index].isEmpty) {
-                                        showCustomSnackBar('Write a review', context);
+                                        showCustomSnackBar('Votre avis nous intéresse', context);
                                       } else {
                                         FocusScopeNode currentFocus = FocusScope.of(context);
                                         if (!currentFocus.hasPrimaryFocus) {

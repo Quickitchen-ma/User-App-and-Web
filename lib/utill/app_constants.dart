@@ -63,7 +63,8 @@ class AppConstants {
   static const String TOPIC = 'notify';
 
   static List<LanguageModel> languages = [
-    LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
     LanguageModel(imageUrl: Images.french, languageName: 'Français', countryCode: 'FR', languageCode: 'fr'),
+    LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
+    
   ];
 }

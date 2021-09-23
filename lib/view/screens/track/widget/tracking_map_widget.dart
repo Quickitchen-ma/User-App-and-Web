@@ -150,7 +150,7 @@ class _TrackingMapWidgetState extends State<TrackingMapWidget> {
         markerId: MarkerId('delivery_boy'),
         position: _deliveryBoyLatLng,
         infoWindow: InfoWindow(
-          title: 'Delivery Man',
+          title: 'Livreur',
           snippet: '${_deliveryBoyLatLng.latitude}, ${_deliveryBoyLatLng.longitude}',
         ),
         rotation: _rotation,

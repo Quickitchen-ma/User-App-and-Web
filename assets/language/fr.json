@@ -203,7 +203,7 @@
   "connected": "Connecté",
   "payment_info": "Informations de paiement",
   "status": "Statut:",
-  "method": "Méthodologie:",
+  "method": "Moyen:",
   "change": "Changer",
   "do_you_want_to_switch": "Voulez-vous changer votre mode de paiement du paiement numérique au paiement à la livraison?",
   "service_is_not_available": "Le service n'est pas disponible dans cette zone.",

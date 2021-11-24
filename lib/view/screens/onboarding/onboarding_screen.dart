@@ -64,7 +64,7 @@ class OnBoardingScreen extends StatelessWidget {
                             children: _pageIndicators(onBoardingList.onBoardingList, context),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 60, right: 60, top: 50, bottom: 22),
+                            padding: const EdgeInsets.only(left: 60, right: 60, top: 60, bottom: 22),
                             child: Text(
                               onBoardingList.selectedIndex == 0
                                   ? onBoardingList.onBoardingList[0].title

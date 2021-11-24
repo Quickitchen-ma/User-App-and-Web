@@ -302,13 +302,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                             ]),
                             SizedBox(height: 10),
 
-                            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                              Text(getTranslated('tax', context), style: rubikRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),
-                              Text('(+) ${PriceConverter.convertPrice(context, _tax)}', style: rubikRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),
-                            ]),
-                            SizedBox(height: 10),
-
-                            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                               Text(getTranslated('addons', context), style: rubikRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),
                               Text('(+) ${PriceConverter.convertPrice(context, _addOns)}', style: rubikRegular.copyWith(fontSize: Dimensions.FONT_SIZE_LARGE)),
                             ]),

@@ -13,6 +13,7 @@ class Images {
   static const String payment = 'assets/image/payment.png';
   static const String profile = 'assets/image/profile.png';
   static const String image = 'assets/image/image.png';
+  static const String splashlogo = 'assets/image/splashlogo.png';
   static const String send = 'assets/image/send.png';
   static const String line = 'assets/image/line.png';
   static const String coupon_bg = 'assets/image/coupon_bg.png';

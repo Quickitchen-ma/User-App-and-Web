@@ -1,0 +1,155 @@
+import 'package:flutter/material.dart';
+import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:flutter_restaurant/helper/date_converter.dart';
+import 'package:flutter_restaurant/helper/network_info.dart';
+import 'package:flutter_restaurant/helper/responsive_helper.dart';
+import 'package:flutter_restaurant/localization/language_constrants.dart';
+import 'package:flutter_restaurant/provider/splash_provider.dart';
+import 'package:flutter_restaurant/utill/color_resources.dart';
+import 'package:flutter_restaurant/utill/dimensions.dart';
+import 'package:flutter_restaurant/utill/images.dart';
+import 'package:flutter_restaurant/utill/styles.dart';
+import 'package:flutter_restaurant/view/screens/cart/cart_screen.dart';
+import 'package:flutter_restaurant/view/screens/home/home_screen.dart';
+import 'package:flutter_restaurant/view/screens/menu/menu_screen.dart';
+import 'package:flutter_restaurant/view/screens/order/order_screen.dart';
+import 'package:flutter_restaurant/view/screens/wishlist/wishlist_screen.dart';
+import 'package:provider/provider.dart';
+
+
+class DashboardScreen extends StatefulWidget {
+  final int pageIndex;
+  DashboardScreen({@required this.pageIndex});
+
+  @override
+  _DashboardScreenState createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  PageController _pageController;
+  int _pageIndex = 0;
+  List<Widget> _screens;
+  GlobalKey<ScaffoldMessengerState> _scaffoldKey = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _pageIndex = widget.pageIndex;
+
+    _pageController = PageController(initialPage: widget.pageIndex);
+
+    _screens = [
+      HomeScreen(),
+      CartScreen(),
+      OrderScreen(),
+      WishListScreen(),
+      MenuScreen(onTap: (int pageIndex) {
+        _setPage(pageIndex);
+      }),
+    ];
+
+    if(ResponsiveHelper.isMobilePhone()) {
+      NetworkInfo.checkConnectivity(_scaffoldKey);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      onWillPop: () async {
+        if (_pageIndex != 0) {
+          _setPage(0);
+          return false;
+        } else {
+          return true;
+        }
+      },
+      child: Scaffold(
+        body: PageView.builder(
+          controller: _pageController,
+          itemCount: _screens.length,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return _screens[index];
+          },
+        ),
+        appBar: Provider.of<SplashProvider>(context, listen: false).isRestaurantClosed() ? PreferredSize(
+          preferredSize: Size.fromHeight(40),
+          child: Center(
+            child: Container(
+              width: 1170,
+              height: 40 + MediaQuery.of(context).padding.top,
+              color: Theme.of(context).primaryColor,
+              padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+              child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Padding(padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL), child: Image.asset(Images.closed, width: 25, height: 25)),
+                Text(
+                  '${getTranslated('restaurant_is_close_now', context)} '
+                      '${DateConverter.convertTimeToTime('${Provider.of<SplashProvider>(context, listen: false).configModel.restaurantOpenTime}:00')}',
+                  style: rubikRegular.copyWith(fontSize: 12, color: Colors.amber),
+                ),
+              ]),
+            ),
+          ),
+        ) : null,
+        key: _scaffoldKey,
+        bottomNavigationBar: BottomNavyBar(
+        selectedIndex: _pageIndex,
+        showElevation: true,
+        itemCornerRadius: 24,
+        curve: Curves.easeIn,
+    
+        onItemSelected: (index) => setState(() => _pageIndex = index),
+        items: <BottomNavyBarItem>[
+          BottomNavyBarItem(
+            icon: Icon(Icons.home),
+            title: Text(getTranslated('home', context)),
+            textAlign: TextAlign.center,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: ColorResources.COLOR_GREY
+            
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.shopping_cart),
+            title: Text(getTranslated('cart', context)),
+            textAlign: TextAlign.center,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: ColorResources.COLOR_GREY
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.shopping_bag),
+            title: Text(getTranslated('order', context)),
+            textAlign: TextAlign.center,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: ColorResources.COLOR_GREY
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.favorite),
+            title: Text(getTranslated('favourite', context)),
+            textAlign: TextAlign.center,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: ColorResources.COLOR_GREY
+          ),
+          BottomNavyBarItem(
+            icon: Icon(Icons.menu),
+            title: Text(getTranslated('menu', context)),
+            textAlign: TextAlign.center,
+            activeColor: Theme.of(context).primaryColor,
+            inactiveColor: ColorResources.COLOR_GREY
+          ),
+        ],
+      )
+
+        
+        
+      ),
+    );
+  }
+
+  }
+
+  void _setPage(int pageIndex) {
+    
+  }
+

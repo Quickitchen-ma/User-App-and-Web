@@ -89,7 +89,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _globalKey,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF174823),
       body: Center(
         child: Consumer<SplashProvider>(builder: (context, splash, child) {
           return Column(
@@ -97,17 +97,23 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               ResponsiveHelper.isWeb() ? FadeInImage.assetNetwork(
                 placeholder: Images.placeholder_rectangle, height: 165,
-                image: splash.baseUrls != null ? '${splash.baseUrls.restaurantImageUrl}/${splash.configModel.restaurantLogo}' : '',
-                imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_rectangle, height: 165),
-              ) : Image.asset(Images.logo, height: 150),
-              SizedBox(height: 30),
+                image: splash.baseUrls != null ? 'assets/image/splashlogo.png' : '',
+                imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_rectangle, height: 170),
+              ) : Image.asset(Images.splashlogo, height: 170),
+              SizedBox(height: 15),
               Text(
-                ResponsiveHelper.isWeb() ? splash.configModel.restaurantName : AppConstants.APP_NAME,
-                style: rubikBold.copyWith(color: Theme.of(context).primaryColor, fontSize: 30),
+                ResponsiveHelper.isWeb() ? splash.configModel.restaurantName : AppConstants.APP_SLOGAN,
+                style: rubikRegular.copyWith(color: Theme.of(context).primaryColorLight, fontSize: 15),
               ),
+              SizedBox(height: 45),
+            CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            )  
             ],
           );
+        
         }),
+      
       ),
     );
   }

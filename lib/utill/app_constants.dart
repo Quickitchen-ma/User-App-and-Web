@@ -2,8 +2,8 @@ import 'package:flutter_restaurant/data/model/response/language_model.dart';
 import 'package:flutter_restaurant/utill/images.dart';
 
 class AppConstants {
-
   static const String APP_NAME = 'Quickitchen.ma';
+  static const String APP_SLOGAN = 'Le 1er Restaurant en ligne sur Agadir';
 
   static const String BASE_URL = 'https://backoffice.quickitchen.ma';
   static const String CATEGORY_URI = '/api/v1/categories';
@@ -28,7 +28,8 @@ class AppConstants {
   static const String TOKEN_URI = '/api/v1/customer/cm-firebase-token';
   static const String PLACE_ORDER_URI = '/api/v1/customer/order/place';
   static const String ADDRESS_LIST_URI = '/api/v1/customer/address/list';
-  static const String REMOVE_ADDRESS_URI = '/api/v1/customer/address/delete?address_id=';
+  static const String REMOVE_ADDRESS_URI =
+      '/api/v1/customer/address/delete?address_id=';
   static const String ADD_ADDRESS_URI = '/api/v1/customer/address/add';
   static const String UPDATE_ADDRESS_URI = '/api/v1/customer/address/update/';
   static const String SET_MENU_URI = '/api/v1/products/set-menu';
@@ -37,18 +38,24 @@ class AppConstants {
   static const String COUPON_APPLY_URI = '/api/v1/coupon/apply?code=';
   static const String ORDER_LIST_URI = '/api/v1/customer/order/list';
   static const String ORDER_CANCEL_URI = '/api/v1/customer/order/cancel';
-  static const String UPDATE_METHOD_URI = '/api/v1/customer/order/payment-method';
-  static const String ORDER_DETAILS_URI = '/api/v1/customer/order/details?order_id=';
+  static const String UPDATE_METHOD_URI =
+      '/api/v1/customer/order/payment-method';
+  static const String ORDER_DETAILS_URI =
+      '/api/v1/customer/order/details?order_id=';
   static const String WISH_LIST_GET_URI = '/api/v1/customer/wish-list';
-  static const String ADD_WISH_LIST_URI = '/api/v1/customer/wish-list/add?product_id=';
-  static const String REMOVE_WISH_LIST_URI = '/api/v1/customer/wish-list/remove?product_id=';
+  static const String ADD_WISH_LIST_URI =
+      '/api/v1/customer/wish-list/add?product_id=';
+  static const String REMOVE_WISH_LIST_URI =
+      '/api/v1/customer/wish-list/remove?product_id=';
   static const String NOTIFICATION_URI = '/api/v1/notifications';
   static const String UPDATE_PROFILE_URI = '/api/v1/customer/update-profile';
   static const String SEARCH_URI = '/api/v1/products/search?name=';
   static const String REVIEW_URI = '/api/v1/products/reviews/submit';
   static const String PRODUCT_DETAILS_URI = '/api/v1/products/details/';
-  static const String LAST_LOCATION_URI = '/api/v1/delivery-man/last-location?order_id=';
-  static const String DELIVER_MAN_REVIEW_URI = '/api/v1/delivery-man/reviews/submit';
+  static const String LAST_LOCATION_URI =
+      '/api/v1/delivery-man/last-location?order_id=';
+  static const String DELIVER_MAN_REVIEW_URI =
+      '/api/v1/delivery-man/reviews/submit';
 
   // Shared Key
   static const String THEME = 'theme';
@@ -63,8 +70,15 @@ class AppConstants {
   static const String TOPIC = 'notify';
 
   static List<LanguageModel> languages = [
-    LanguageModel(imageUrl: Images.french, languageName: 'Français', countryCode: 'FR', languageCode: 'fr'),
-    LanguageModel(imageUrl: Images.arabic, languageName: 'Arabic', countryCode: 'SA', languageCode: 'ar'),
-    
+    LanguageModel(
+        imageUrl: Images.french,
+        languageName: 'Français',
+        countryCode: 'FR',
+        languageCode: 'fr'),
+    LanguageModel(
+        imageUrl: Images.arabic,
+        languageName: 'Arabic',
+        countryCode: 'SA',
+        languageCode: 'ar'),
   ];
 }

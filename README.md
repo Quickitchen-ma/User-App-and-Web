@@ -1,5 +1,4 @@
-# flutter_restaurant
-
+# Quickitchen_mobile_app
 A new Flutter restaurant application.
 
 ## Getting Started
